@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anna Dobek-Lenczewska — architektka</title>
+<meta name="description" content="Anna Dobek-Lenczewska — architektka. Wybrane projekty, konkursy, biogram.">
+<style>
+  :root{
+    --paper:#F2F1EC;
+    --ink:#171715;
+    --soft:#7d7a72;
+    --rule:#CFCDC4;
+    --rule-strong:#171715;
+    --sans:'Helvetica Neue','Arial Nova',Helvetica,Arial,sans-serif;
+    --maxw:1240px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  ::selection{background:var(--ink);color:var(--paper)}
+  a{color:inherit}
+  a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+  .meta{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--soft)}
+
+  /* ===== nagłówek (fixed, hairline) ===== */
+  .bar{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(242,241,236,.86);
+    backdrop-filter:saturate(140%) blur(8px);
+    border-bottom:1px solid var(--rule-strong);
+  }
+  .bar .row{max-width:var(--maxw);margin:0 auto;padding:15px clamp(20px,4vw,56px);
+    display:flex;justify-content:space-between;align-items:baseline;gap:20px}
+  .bar .nm{font-size:14px;font-weight:600;letter-spacing:-.01em}
+  .bar nav{display:flex;gap:clamp(14px,2.4vw,34px)}
+  .bar nav a{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);text-decoration:none}
+  .bar nav a:hover{color:var(--ink)}
+  @media(max-width:520px){.bar nav a:nth-child(3){display:none}}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+
+  /* ===== hero ===== */
+  .hero{padding:clamp(140px,22vh,260px) 0 clamp(80px,14vh,160px);border-bottom:1px solid var(--rule-strong)}
+  .hero .ey{margin-bottom:30px}
+  .hero h1{
+    font-size:clamp(34px,5.4vw,76px);
+    line-height:1.04;letter-spacing:-.033em;font-weight:600;
+    max-width:16ch;text-wrap:balance;
+  }
+  .hero .lead{margin-top:34px;max-width:52ch;font-size:clamp(17px,1.7vw,20px);line-height:1.55;color:var(--ink)}
+
+  /* ===== wspólny układ sekcji: etykieta po lewej, treść po prawej ===== */
+  .block{display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(24px,5vw,80px);
+    padding:clamp(56px,9vh,104px) 0;border-bottom:1px solid var(--rule)}
+  .block > .lab{position:sticky;top:96px;align-self:start;height:max-content}
+  .block > .lab .n{display:block;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink);font-weight:600}
+  .block > .lab .s{display:block;margin-top:6px;font-size:11.5px;letter-spacing:.04em;color:var(--soft)}
+  @media(max-width:760px){
+    .block{grid-template-columns:1fr;gap:18px;padding:clamp(48px,7vh,72px) 0}
+    .block > .lab{position:static}
+  }
+
+  /* biogram */
+  .bio p{margin-bottom:20px;max-width:64ch;font-size:clamp(16px,1.45vw,18px)}
+  .bio p:last-child{margin-bottom:0}
+
+  /* ===== indeks projektów (sygnatura strony) ===== */
+  #works .lab{position:static}
+  .works-inner{grid-column:1 / -1}
+  .idx{border-top:1px solid var(--rule-strong)}
+  .idx details{border-bottom:1px solid var(--rule)}
+  .idx summary{
+    list-style:none;cursor:pointer;
+    display:grid;grid-template-columns:46px minmax(0,1fr) 150px 64px 26px;
+    align-items:baseline;gap:20px;
+    padding:22px 0;
+  }
+  .idx summary::-webkit-details-marker{display:none}
+  .idx .ix{font-size:12px;color:var(--soft);letter-spacing:.04em}
+  .idx .ti{font-size:clamp(19px,2.3vw,26px);font-weight:500;letter-spacing:-.02em;line-height:1.15}
+  .idx .lo{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);align-self:center}
+  .idx .yr{font-size:11.5px;letter-spacing:.06em;color:var(--soft);text-align:right;align-self:center}
+  .idx .pm{justify-self:end;align-self:center;width:11px;height:11px;position:relative}
+  .idx .pm::before,.idx .pm::after{content:"";position:absolute;background:var(--ink);transition:opacity .2s}
+  .idx .pm::before{top:5px;left:0;width:11px;height:1px}
+  .idx .pm::after{top:0;left:5px;width:1px;height:11px}
+  .idx details[open] .pm::after{opacity:0}
+  .idx summary:hover .ti{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+  .idx details[open] .ti{font-weight:600}
+
+  .idx .body{padding:0 0 30px;display:grid;grid-template-columns:46px minmax(0,1fr);gap:20px}
+  .idx .body .txt{max-width:64ch}
+  .idx .body p{margin-bottom:14px}
+  .idx .body p:last-of-type{margin-bottom:0}
+  .idx .body .cr{margin-top:18px;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--soft)}
+  .idx .body .cr b{color:var(--ink);font-weight:500}
+
+  @media(max-width:680px){
+    .idx summary{grid-template-columns:34px 1fr 22px;gap:14px;padding:18px 0}
+    .idx .lo,.idx .yr{display:none}
+    .idx .body{grid-template-columns:1fr}
+  }
+
+  /* ===== poza architekturą ===== */
+  .extra{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px)}
+  .extra h3{font-size:clamp(20px,2.1vw,24px);font-weight:600;letter-spacing:-.018em;margin-bottom:14px}
+  .extra p{max-width:48ch;font-size:15.5px}
+  @media(max-width:680px){.extra{grid-template-columns:1fr;gap:36px}}
+
+  /* ===== stopka ===== */
+  footer{padding:clamp(80px,14vh,160px) 0 64px}
+  footer .big{font-size:clamp(28px,5vw,60px);font-weight:600;letter-spacing:-.03em;line-height:1.05;max-width:18ch}
+  footer .big a{text-decoration:none;border-bottom:2px solid var(--ink)}
+  footer .big a:hover{color:var(--soft);border-color:var(--soft)}
+  footer .end{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule-strong);
+    display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+  <div class="bar">
+    <div class="row">
+      <a class="nm" href="#top" style="text-decoration:none">Anna Dobek-Lenczewska</a>
+      <nav aria-label="Nawigacja">
+        <a href="#works">Projekty</a>
+        <a href="#about">Biogram</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrap" id="top">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="ey meta">Architektka · Warszawa · WXCA</div>
+      <h1>Architektura instytucji kultury.</h1>
+      <p class="lead">Projektuję muzea, teatry i pawilony — miejsca, w których dziedzictwo spotyka się ze współczesnym miastem, a budynek staje się przestrzenią publiczną.</p>
+    </header>
+
+    <!-- BIOGRAM -->
+    <section class="block" id="about">
+      <div class="lab"><span class="n">Biogram</span><span class="s">01 / Praktyka</span></div>
+      <div class="bio">
+        <p>Jestem architektką Associate w warszawskiej pracowni WXCA, gdzie od lat współtworzę projekty publicznych instytucji kultury — realizowane i nagradzane zarówno w Polsce, jak i w międzynarodowych konkursach. Mam za sobą pracę nad obiektami w bardzo różnej skali: od kameralnego muzeum w historycznej tkance miasta, przez teatr i akademię, po jeden z największych kompleksów muzealnych współczesnej Europy.</p>
+        <p>W centrum mojej praktyki leży architektura publiczna rozumiana jako odpowiedzialność. Interesuje mnie moment, w którym budynek przestaje być wyłącznie obiektem, a staje się częścią miasta — kiedy struktura wyrasta z rytmu otoczenia, parter otwiera się na ulicę, a instytucja kultury zamienia się w ciąg powiązanych ze sobą przestrzeni publicznych. Wielokrotnie pracowałam nad projektami, w których współczesna forma musiała wejść w dialog z zabytkiem, nie podporządkowując się mu i nie próbując go zagłuszyć.</p>
+        <p>Poza pracą projektową angażuję się w szerszą debatę o mieście i środowisku. Jako wiceprezeska zarządu Fundacji Miastonatura zajmuję się relacją między architekturą a przyrodą i biorę udział w panelach o architekturze odpowiedzialnej. Wcześniej współtworzyłam markę odzieżową THISISNON — projektowe doświadczenie, które do dziś wpływa na to, jak myślę o materiale, konstrukcji i trwałości.</p>
+      </div>
+    </section>
+
+    <!-- PROJEKTY -->
+    <section class="block" id="works">
+      <div class="lab"><span class="n">Wybrane projekty</span><span class="s">02 / 2019—2026</span></div>
+      <div class="works-inner">
+        <div class="idx">
+
+          <details open>
+            <summary>
+              <span class="ix">01</span>
+              <span class="ti">Muzeum Książąt Lubomirskich</span>
+              <span class="lo">Wrocław</span>
+              <span class="yr">w budowie</span>
+              <span class="pm" aria-hidden="true"></span>
+            </summary>
+            <div class="body"><span></span><div class="txt">
+              <p>Zwycięska koncepcja w międzynarodowym konkursie zorganizowanym przez Zakład Narodowy im. Ossolińskich wspólnie z SARP, na który napłynęło ponad sto prac z całego świata. Jury, któremu przewodniczył Maciej Miłobędzki, doceniło projekt za wrażliwość, czytelny gest architektoniczny i ponadczasowość.</p>
+              <p>Sami określiliśmy budynek mianem „współczesnego miejskiego pałacu". Jego struktura odwołuje się do rytmów otaczających go historycznych gmachów, ale odpowiada na nie po swojemu — otwartością, wyważonymi proporcjami przeszkleń i swobodną kompozycją. Parter łączy funkcje kultury, edukacji, handlu i gastronomii w ciąg powiązanych przestrzeni publicznych zintegrowanych z miastem; sercem budynku jest hol główny z kawiarnią, sklepem i salą audytoryjną. Wyższe kondygnacje zajmują galerie i pracownie konserwatorskie, a w centralnej części ukryto magazyny chroniące bezcenną kolekcję Ossolineum. Budowa ruszyła w 2025 roku.</p>
+              <p class="cr">I nagroda, konkurs SARP / Ossolineum · Współautorka · <b>WXCA</b></p>
+            </div></div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="ix">02</span>
+              <span class="ti">Pawilon Polski — EXPO 2020</span>
+              <span class="lo">Dubaj, ZEA</span>
+              <span class="yr">2020</span>
+              <span class="pm" aria-hidden="true"></span>
+            </summary>
+            <div class="body"><span></span><div class="txt">
+              <p>Pawilon narodowy na Wystawę Światową EXPO 2020 — projekt, w którym opowieść o Polsce zbudowano wokół relacji człowieka z naturą i tematu migracji. Nad bryłą unosi się charakterystyczna kinetyczna rzeźba stada ptaków, która stała się rozpoznawalnym znakiem pawilonu i jednym z najczęściej fotografowanych obiektów całej wystawy.</p>
+              <p>Architektura czerpała z idei przepływu — ludzi, idei, energii — przekładając ją na sekwencję przestrzeni prowadzących zwiedzającego przez ekspozycję. Projekt był wielokrotnie nagradzany i pokazał, że minimalistyczny, oparty na jednym mocnym geście język może udźwignąć reprezentacyjną rolę pawilonu narodowego na jednej z największych scen świata.</p>
+              <p class="cr">Zrealizowany · Zespół projektu koncepcyjnego · <b>WXCA</b></p>
+            </div></div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="ix">03</span>
+              <span class="ti">Muzeum Historii Polski i Muzeum Wojska Polskiego</span>
+              <span class="lo">Warszawa</span>
+              <span class="yr">2024</span>
+              <span class="pm" aria-hidden="true"></span>
+            </summary>
+            <div class="body"><span></span><div class="txt">
+              <p>Udział w wieloletniej pracy ponad stuosobowego zespołu nad jednym z największych kompleksów publicznych instytucji kultury we współczesnej Europie, wzniesionym na warszawskiej Cytadeli. To projekt o wyjątkowej skali i odpowiedzialności — dwa muzea, które wspólnie redefiniują tę część miasta i jej pamięć.</p>
+              <p>Muzeum Historii Polski zostało uhonorowane prestiżową nagrodą ULI Global Award for Excellence 2024 jako najlepsza inwestycja w sektorze kultury na świecie. Pawilon Południowy Muzeum Wojska Polskiego doceniono z kolei za mistrzowskie operowanie betonem: jury podkreśliło pełne wykorzystanie tego tworzywa i „niewidoczną" integrację wszystkich branż budowlanych w spójnym dziele architektonicznym. Projekt pokazuje, jak konsekwentnie prowadzony detal potrafi określić charakter budynku w skali całego miasta.</p>
+              <p class="cr">ULI Global Award for Excellence 2024 · Zespół autorski · <b>WXCA</b></p>
+            </div></div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="ix">04</span>
+              <span class="ti">Nowy Pawilon Muzeum Narodowego</span>
+              <span class="lo">Warszawa</span>
+              <span class="yr">2022</span>
+              <span class="pm" aria-hidden="true"></span>
+            </summary>
+            <div class="body"><span></span><div class="txt">
+              <p>Trzecia nagroda w konkursie SARP na Centrum Konserwatorsko-Magazynowe Muzeum Narodowego — projekt, który zamiast dostawiać kolejną bryłę obok ikony polskiego modernizmu, postanowił niemal w całości schować się pod ziemią. To „budynek krajobrazu": wszystkie wymagane funkcje umieszczono pod powierzchnią, tak by nowa kubatura nie konkurowała z zabytkowym gmachem ani z parkiem na warszawskiej skarpie.</p>
+              <p>Koncepcja poetycko wpisuje się w stołeczną skarpę — pas instytucji i zieleni, który współtworzy tożsamość Warszawy. Projektowany budynek wraz z istniejącym gmachem podkreśla wartości, które były dla nas punktem wyjścia: otwartość, dostępność, zwrócenie się ku naturze, mądre gospodarowanie zasobami i współistnienie kultury z przyrodą. Opieka nad zbiorami staje się tu pretekstem do refleksji nad tym, jak dziś budować w sąsiedztwie dziedzictwa.</p>
+              <p class="cr">III nagroda, konkurs SARP nr 1022 · Współautorka · <b>WXCA</b></p>
+            </div></div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="ix">05</span>
+              <span class="ti">Museum für Naturkunde</span>
+              <span class="lo">Berlin</span>
+              <span class="yr">2023</span>
+              <span class="pm" aria-hidden="true"></span>
+            </summary>
+            <div class="body"><span></span><div class="txt">
+              <p>Czwarta nagroda w międzynarodowym konkursie na modernizację siedziby berlińskiego Muzeum Historii Naturalnej, zrealizowanym we współpracy z niemiecką pracownią KOPPERROTH. To szczególnie cenne wyróżnienie, bo w gronie konkurentów znaleźli się architekci tej klasy co David Chipperfield czy Jeanne Gang.</p>
+              <p>Jury wyróżniło nasz projekt przede wszystkim za śmiałą koncepcję przestrzeni wejściowej — zapraszającą platformę, która płynnie łączy muzeum z miastem i znosi próg między instytucją naukową a codziennym życiem ulicy. Praca wpisuje się w konsekwentnie rozwijane przeze mnie podejście, w którym modernizacja zabytkowego gmachu nie polega na jego muzealnym zamrożeniu, lecz na otwarciu go na nowych użytkowników.</p>
+              <p class="cr">IV nagroda, konkurs międzynarodowy · Zespół <b>WXCA</b> + KOPPERROTH</p>
+            </div></div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="ix">06</span>
+              <span class="ti">Kompleks Kulturalny w Incheon</span>
+              <span class="lo">Korea Płd.</span>
+              <span class="yr">2023</span>
+              <span class="pm" aria-hidden="true"></span>
+            </summary>
+            <div class="body"><span></span><div class="txt">
+              <p>Nagroda w międzynarodowym konkursie na kompleks kulturalny w południowokoreańskim Incheon — projekt, który wymagał wejścia w obcy kontekst kulturowy i odczytania go z szacunkiem, a nie z pozycji turysty.</p>
+              <p>Innowacji szukaliśmy, sięgając do tradycyjnych koreańskich koncepcji: sztuki suseok, czerpiącej inspirację z naturalnych skał i kamieni; architektury hanoków, którą potraktowaliśmy jako prototyp współczesnego, zrównoważonego budownictwa; oraz właściwej tej kulturze umiejętności dostrzegania subtelnych relacji między człowiekiem, kulturą a naturą. Z tych wątków wyrosła architektura, która jest jednocześnie lokalna w odniesieniach i uniwersalna w sposobie, w jaki organizuje przestrzeń publiczną.</p>
+              <p class="cr">Nagroda, konkurs międzynarodowy · Zespół <b>WXCA</b> · konsult. Buro Happold</p>
+            </div></div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="ix">07</span>
+              <span class="ti">Akademia Muzyczna im. K. Pendereckiego</span>
+              <span class="lo">Kraków</span>
+              <span class="yr">2022</span>
+              <span class="pm" aria-hidden="true"></span>
+            </summary>
+            <div class="body"><span></span><div class="txt">
+              <p>Trzecia nagroda w konkursie architektoniczno-urbanistycznym na nowy zespół budynków dydaktycznych krakowskiej Akademii Muzycznej, planowany w dzielnicy Grzegórzki w bliskości Wisły. Zaproponowaliśmy organiczną bryłę zwróconą ku rzece — formę, która miała wyrażać tożsamość uczelni: artystyczną śmiałość, otwartość na eksperyment i witalność.</p>
+              <p>Sąd konkursowy docenił oryginalne wpisanie projektu w kontekst urbanistyczny oraz stworzenie spójnego założenia parkowego, wykraczającego poza granice działki i traktującego istniejący drzewostan jako wartość, którą należy chronić, a nie przeszkodę. Architektura instytucji muzycznej stała się tu pretekstem do myślenia o całym fragmencie miasta i jego relacji z zielenią nadrzeczną.</p>
+              <p class="cr">III nagroda, konkurs rekomendowany SARP · Współautorka · <b>WXCA</b></p>
+            </div></div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="ix">08</span>
+              <span class="ti">Teatr Bagatela im. T. Boya-Żeleńskiego</span>
+              <span class="lo">Kraków</span>
+              <span class="yr">2025</span>
+              <span class="pm" aria-hidden="true"></span>
+            </summary>
+            <div class="body"><span></span><div class="txt">
+              <p>Koncepcja przebudowy i rozbudowy jednego z najważniejszych krakowskich teatrów, wpisanego w miejską tkankę od ponad stu lat. Projekt łączy ochronę historycznej substancji budynku z wizją nowoczesnej, wielofunkcyjnej instytucji kultury otwartej na mieszkańców i turystów — to próba potraktowania dziedzictwa nie jako zamkniętego rozdziału, lecz jako punktu wyjścia do tworzenia nowych wartości.</p>
+              <p>W konkursie praca otrzymała drugą nagrodę; jury podkreśliło szacunek dla historycznej formy i tradycji teatru, atuty wysokiego, trzykondygnacyjnego holu wejściowego i centralnego dziedzińca oraz staranne opracowanie akustyczne. Projekt został następnie laureatem nagrody Wprost UP!Awards 2026 w kategorii „Z szacunkiem do przeszłości".</p>
+              <p class="cr">II nagroda · UP!Awards 2026 · Współautorka · <b>WXCA</b></p>
+            </div></div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="ix">09</span>
+              <span class="ti">MSN i Teatr TR Warszawa</span>
+              <span class="lo">Warszawa</span>
+              <span class="yr">koncepcja</span>
+              <span class="pm" aria-hidden="true"></span>
+            </summary>
+            <div class="body"><span></span><div class="txt">
+              <p>Koncepcja konkursowa wspólnej siedziby dwóch awangardowych instytucji w samym sercu Warszawy. Obie budują swoją tożsamość wokół eksperymentalnego podejścia do sztuki, dialogu i misji włączania sztuki współczesnej w życie społeczne — i to stało się głównym tematem projektu.</p>
+              <p>Zaproponowaliśmy architekturę pomyślaną jako wielowarstwowy, tektoniczny krajobraz, który umożliwia zaistnienie sztuki w przestrzeni miasta. Celem było stworzenie ram dla aktywności społecznej: miejsc spotkań, dyskusji i kontemplacji, w których wyrazista i niepowtarzalna forma wspiera to, co dzieje się wewnątrz, zamiast z nim konkurować.</p>
+              <p class="cr">Koncepcja konkursowa · Zespół <b>WXCA</b></p>
+            </div></div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- POZA ARCHITEKTURĄ -->
+    <section class="block" id="aside">
+      <div class="lab"><span class="n">Poza architekturą</span><span class="s">03 / Pokrewne</span></div>
+      <div class="extra">
+        <div>
+          <h3>THISISNON</h3>
+          <p>Współzałożycielka marki THISISNON, prowadzonej wspólnie z Agatą Macios — projektowego konceptu na pograniczu mody i architektury. Minimalistyczne, ponadczasowe ubrania szyte w całości w Polsce, z pełnym poszanowaniem praw pracowniczych. Idea: przenieść myślenie przestrzenne i konstrukcyjne z architektury na język tkaniny i projektować ubrania tak trwałe, by można je było nosić latami.</p>
+        </div>
+        <div>
+          <h3>Fundacja Miastonatura</h3>
+          <p>Wiceprezeska zarządu fundacji zajmującej się relacją między miastem a przyrodą. Udział w debatach o architekturze odpowiedzialnej — m.in. w panelu „Miasto otwarte, miasto przyjazne" — oraz współredagowanie wydań tematycznych poświęconych śladom, jakie architektura zostawia w środowisku. Przestrzeń, w której praktyka projektowa spotyka się z szerszą refleksją o budowaniu.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <footer id="contact">
+      <p class="big">Porozmawiajmy o architekturze — <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+      <div class="end meta">
+        <span>Anna Dobek-Lenczewska · Architektka · WXCA</span>
+        <span>Warszawa, Polska · © 2026</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
