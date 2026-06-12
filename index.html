@@ -111,6 +111,21 @@
     .idx .body{grid-template-columns:1fr}
   }
 
+
+  /* ===== miejsce na szkice ===== */
+  .idx .detail{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(24px,4vw,52px);align-items:start}
+  .idx .txt{max-width:60ch}
+  figure.sketch{margin:0}
+  .sketch .ph{position:relative;border:1px solid var(--ink);background:#FAF9F5;aspect-ratio:1/1;overflow:hidden}
+  .sketch .ph::after{content:"";position:absolute;inset:11px;border:1px solid var(--rule);pointer-events:none;z-index:1}
+  .sketch .ph .ref-tag{position:absolute;top:9px;left:12px;z-index:2;font-size:10px;letter-spacing:.1em;color:var(--soft)}
+  .sketch .ph .lbl{position:absolute;inset:0;z-index:2;display:grid;place-items:center;text-align:center;padding:18px}
+  .sketch .ph .lbl b{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);font-weight:600}
+  .sketch .ph .lbl small{display:block;margin-top:6px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+  .sketch .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:3;display:block}
+  .sketch figcaption{margin-top:10px;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);display:flex;justify-content:space-between;gap:12px}
+  @media(max-width:760px){.idx .detail{grid-template-columns:1fr;gap:22px}}
+
   /* ===== poza architekturą ===== */
   .extra{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px)}
   .extra h3{font-size:clamp(20px,2.1vw,24px);font-weight:600;letter-spacing:-.018em;margin-bottom:14px}
@@ -172,10 +187,19 @@
               <span class="yr">w budowie</span>
               <span class="pm" aria-hidden="true"></span>
             </summary>
-            <div class="body"><span></span><div class="txt">
+            <div class="body"><span></span><div class="detail"><div class="txt">
               <p>Zwycięska koncepcja w międzynarodowym konkursie zorganizowanym przez Zakład Narodowy im. Ossolińskich wspólnie z SARP, na który napłynęło ponad sto prac z całego świata. Jury, któremu przewodniczył Maciej Miłobędzki, doceniło projekt za wrażliwość, czytelny gest architektoniczny i ponadczasowość.</p>
               <p>Sami określiliśmy budynek mianem „współczesnego miejskiego pałacu". Jego struktura odwołuje się do rytmów otaczających go historycznych gmachów, ale odpowiada na nie po swojemu — otwartością, wyważonymi proporcjami przeszkleń i swobodną kompozycją. Parter łączy funkcje kultury, edukacji, handlu i gastronomii w ciąg powiązanych przestrzeni publicznych zintegrowanych z miastem; sercem budynku jest hol główny z kawiarnią, sklepem i salą audytoryjną. Wyższe kondygnacje zajmują galerie i pracownie konserwatorskie, a w centralnej części ukryto magazyny chroniące bezcenną kolekcję Ossolineum. Budowa ruszyła w 2025 roku.</p>
               <p class="cr">I nagroda, konkurs SARP / Ossolineum · Współautorka · <b>WXCA</b></p>
+            </div>
+              <figure class="sketch">
+                <div class="ph">
+                  <span class="ref-tag">P.01</span>
+                  <span class="lbl"><b>Szkic</b><small>w przygotowaniu</small></span>
+                  <!-- SZKIC: wstaw obraz, aby zastąpić placeholder, np. <img src="szkice/p01.jpg" alt="Szkic — Muzeum Książąt Lubomirskich"> -->
+                </div>
+                <figcaption><span>Szkic koncepcyjny</span><span>rys. A. Dobek-Lenczewska</span></figcaption>
+              </figure>
             </div></div>
           </details>
 
@@ -187,10 +211,19 @@
               <span class="yr">realizacja</span>
               <span class="pm" aria-hidden="true"></span>
             </summary>
-            <div class="body"><span></span><div class="txt">
+            <div class="body"><span></span><div class="detail"><div class="txt">
               <p>Udział w wieloletniej pracy ponad stuosobowego zespołu nad jednym z największych kompleksów publicznych instytucji kultury we współczesnej Europie, wzniesionym na warszawskiej Cytadeli. To projekt o wyjątkowej skali i odpowiedzialności — dwa muzea, które wspólnie redefiniują tę część miasta i jej pamięć.</p>
               <p>Muzeum Historii Polski zostało uhonorowane prestiżową nagrodą ULI Global Award for Excellence 2024 jako najlepsza inwestycja w sektorze kultury na świecie. Pawilon Południowy Muzeum Wojska Polskiego doceniono z kolei za mistrzowskie operowanie betonem: jury podkreśliło pełne wykorzystanie tego tworzywa i „niewidoczną" integrację wszystkich branż budowlanych w spójnym dziele architektonicznym. Projekt pokazuje, jak konsekwentnie prowadzony detal potrafi określić charakter budynku w skali całego miasta.</p>
               <p class="cr">ULI Global Award for Excellence 2024 · Zespół autorski · <b>WXCA</b></p>
+            </div>
+              <figure class="sketch">
+                <div class="ph">
+                  <span class="ref-tag">P.02</span>
+                  <span class="lbl"><b>Szkic</b><small>w przygotowaniu</small></span>
+                  <!-- SZKIC: wstaw obraz, aby zastąpić placeholder, np. <img src="szkice/p02.jpg" alt="Szkic — Muzeum Historii Polski i Muzeum Wojska Polskiego"> -->
+                </div>
+                <figcaption><span>Szkic koncepcyjny</span><span>rys. A. Dobek-Lenczewska</span></figcaption>
+              </figure>
             </div></div>
           </details>
 
@@ -202,10 +235,19 @@
               <span class="yr">2020</span>
               <span class="pm" aria-hidden="true"></span>
             </summary>
-            <div class="body"><span></span><div class="txt">
+            <div class="body"><span></span><div class="detail"><div class="txt">
               <p>Pawilon narodowy na Wystawę Światową EXPO 2020 — projekt, w którym opowieść o Polsce zbudowano wokół relacji człowieka z naturą i tematu migracji. Nad bryłą unosi się charakterystyczna kinetyczna rzeźba stada ptaków, która stała się rozpoznawalnym znakiem pawilonu i jednym z najczęściej fotografowanych obiektów całej wystawy.</p>
               <p>Architektura czerpała z idei przepływu — ludzi, idei, energii — przekładając ją na sekwencję przestrzeni prowadzących zwiedzającego przez ekspozycję. Projekt był wielokrotnie nagradzany i pokazał, że minimalistyczny, oparty na jednym mocnym geście język może udźwignąć reprezentacyjną rolę pawilonu narodowego na jednej z największych scen świata.</p>
               <p class="cr">Zrealizowany · Zespół projektu koncepcyjnego · <b>WXCA</b></p>
+            </div>
+              <figure class="sketch">
+                <div class="ph">
+                  <span class="ref-tag">P.03</span>
+                  <span class="lbl"><b>Szkic</b><small>w przygotowaniu</small></span>
+                  <!-- SZKIC: wstaw obraz, aby zastąpić placeholder, np. <img src="szkice/p03.jpg" alt="Szkic — Pawilon Polski — EXPO 2020"> -->
+                </div>
+                <figcaption><span>Szkic koncepcyjny</span><span>rys. A. Dobek-Lenczewska</span></figcaption>
+              </figure>
             </div></div>
           </details>
 
@@ -217,10 +259,19 @@
               <span class="yr">projekt</span>
               <span class="pm" aria-hidden="true"></span>
             </summary>
-            <div class="body"><span></span><div class="txt">
+            <div class="body"><span></span><div class="detail"><div class="txt">
               <p>Projektowane w Wasilkowie pod Białymstokiem centrum kultury, edukacji i rekreacji, poświęcone drewnu jako materiałowi, tradycji i tworzywu współczesnej, zrównoważonej architektury. Obiekt wyrasta wprost z doświadczenia Pawilonu Polski w Dubaju — to jego idea rozwinięta i osadzona w kontekście Podlasia oraz wielopokoleniowej kultury drewna tego regionu.</p>
               <p>Bryła ma formę modularnej, rozwijającej się ku górze struktury, której ramą jest kinetyczna instalacja przedstawiająca stado ptaków w locie — metafora mobilności i przepływu wiedzy. Drewno jest tu zarówno konstrukcją, jak i wykończeniem; ruchome elementy elewacji, poruszane wiatrem i światłem, czynią z budynku interaktywny eksponat w krajobrazie. Wokół zaplanowano ogrody tematyczne, park sztuki, amfiteatr i wieżę widokową, dostępne dla wszystkich i powiązane z sąsiednim Podlaskim Muzeum Kultury Ludowej.</p>
               <p class="cr">Projekt · Współautorka · <b>WXCA</b></p>
+            </div>
+              <figure class="sketch">
+                <div class="ph">
+                  <span class="ref-tag">P.04</span>
+                  <span class="lbl"><b>Szkic</b><small>w przygotowaniu</small></span>
+                  <!-- SZKIC: wstaw obraz, aby zastąpić placeholder, np. <img src="szkice/p04.jpg" alt="Szkic — Xylopolis — Centrum Sztuki i Nauki o Drewnie"> -->
+                </div>
+                <figcaption><span>Szkic koncepcyjny</span><span>rys. A. Dobek-Lenczewska</span></figcaption>
+              </figure>
             </div></div>
           </details>
 
@@ -232,10 +283,19 @@
               <span class="yr">2022</span>
               <span class="pm" aria-hidden="true"></span>
             </summary>
-            <div class="body"><span></span><div class="txt">
+            <div class="body"><span></span><div class="detail"><div class="txt">
               <p>Trzecia nagroda w konkursie SARP na Centrum Konserwatorsko-Magazynowe Muzeum Narodowego — projekt, który zamiast dostawiać kolejną bryłę obok ikony polskiego modernizmu, postanowił niemal w całości schować się pod ziemią. To „budynek krajobrazu": wszystkie wymagane funkcje umieszczono pod powierzchnią, tak by nowa kubatura nie konkurowała z zabytkowym gmachem ani z parkiem na warszawskiej skarpie.</p>
               <p>Koncepcja poetycko wpisuje się w stołeczną skarpę — pas instytucji i zieleni, który współtworzy tożsamość Warszawy. Projektowany budynek wraz z istniejącym gmachem podkreśla wartości, które były dla nas punktem wyjścia: otwartość, dostępność, zwrócenie się ku naturze, mądre gospodarowanie zasobami i współistnienie kultury z przyrodą. Opieka nad zbiorami staje się tu pretekstem do refleksji nad tym, jak dziś budować w sąsiedztwie dziedzictwa.</p>
               <p class="cr">III nagroda, konkurs SARP nr 1022 · Współautorka · <b>WXCA</b></p>
+            </div>
+              <figure class="sketch">
+                <div class="ph">
+                  <span class="ref-tag">P.05</span>
+                  <span class="lbl"><b>Szkic</b><small>w przygotowaniu</small></span>
+                  <!-- SZKIC: wstaw obraz, aby zastąpić placeholder, np. <img src="szkice/p05.jpg" alt="Szkic — Nowy Pawilon Muzeum Narodowego"> -->
+                </div>
+                <figcaption><span>Szkic koncepcyjny</span><span>rys. A. Dobek-Lenczewska</span></figcaption>
+              </figure>
             </div></div>
           </details>
 
@@ -247,10 +307,19 @@
               <span class="yr">2023</span>
               <span class="pm" aria-hidden="true"></span>
             </summary>
-            <div class="body"><span></span><div class="txt">
+            <div class="body"><span></span><div class="detail"><div class="txt">
               <p>Czwarta nagroda w międzynarodowym konkursie na modernizację siedziby berlińskiego Muzeum Historii Naturalnej, zrealizowanym we współpracy z niemiecką pracownią KOPPERROTH. To szczególnie cenne wyróżnienie, bo w gronie konkurentów znaleźli się architekci tej klasy co David Chipperfield czy Jeanne Gang.</p>
               <p>Jury wyróżniło nasz projekt przede wszystkim za śmiałą koncepcję przestrzeni wejściowej — zapraszającą platformę, która płynnie łączy muzeum z miastem i znosi próg między instytucją naukową a codziennym życiem ulicy. Praca wpisuje się w konsekwentnie rozwijane przeze mnie podejście, w którym modernizacja zabytkowego gmachu nie polega na jego muzealnym zamrożeniu, lecz na otwarciu go na nowych użytkowników.</p>
               <p class="cr">IV nagroda, konkurs międzynarodowy · Zespół <b>WXCA</b> + KOPPERROTH</p>
+            </div>
+              <figure class="sketch">
+                <div class="ph">
+                  <span class="ref-tag">P.06</span>
+                  <span class="lbl"><b>Szkic</b><small>w przygotowaniu</small></span>
+                  <!-- SZKIC: wstaw obraz, aby zastąpić placeholder, np. <img src="szkice/p06.jpg" alt="Szkic — Museum für Naturkunde"> -->
+                </div>
+                <figcaption><span>Szkic koncepcyjny</span><span>rys. A. Dobek-Lenczewska</span></figcaption>
+              </figure>
             </div></div>
           </details>
 
@@ -262,10 +331,19 @@
               <span class="yr">2023</span>
               <span class="pm" aria-hidden="true"></span>
             </summary>
-            <div class="body"><span></span><div class="txt">
+            <div class="body"><span></span><div class="detail"><div class="txt">
               <p>Trzecia nagroda w międzynarodowym konkursie architektoniczno-urbanistycznym na zespół kulturalny z muzeum i biblioteką w południowokoreańskim Incheon, do którego stanęło 70 pracowni z 15 krajów. To projekt, który wymagał wejścia w obcy kontekst kulturowy i odczytania go z szacunkiem, a nie z pozycji turysty.</p>
               <p>Innowacji szukaliśmy, sięgając do tradycyjnych koreańskich koncepcji: sztuki suseok, czerpiącej inspirację z naturalnych skał i kamieni; architektury hanoków, którą potraktowaliśmy jako prototyp współczesnego, zrównoważonego budownictwa; oraz właściwej tej kulturze umiejętności dostrzegania subtelnych relacji między człowiekiem, kulturą a naturą. Z tych wątków wyrosła architektura w formie zatopionego w zieleni mostu — jednocześnie lokalna w odniesieniach i uniwersalna w sposobie, w jaki organizuje przestrzeń publiczną.</p>
               <p class="cr">III nagroda, konkurs międzynarodowy · Zespół <b>WXCA</b> · konsult. Buro Happold</p>
+            </div>
+              <figure class="sketch">
+                <div class="ph">
+                  <span class="ref-tag">P.07</span>
+                  <span class="lbl"><b>Szkic</b><small>w przygotowaniu</small></span>
+                  <!-- SZKIC: wstaw obraz, aby zastąpić placeholder, np. <img src="szkice/p07.jpg" alt="Szkic — Kompleks Kulturalny w Incheon"> -->
+                </div>
+                <figcaption><span>Szkic koncepcyjny</span><span>rys. A. Dobek-Lenczewska</span></figcaption>
+              </figure>
             </div></div>
           </details>
 
@@ -277,10 +355,19 @@
               <span class="yr">2022</span>
               <span class="pm" aria-hidden="true"></span>
             </summary>
-            <div class="body"><span></span><div class="txt">
+            <div class="body"><span></span><div class="detail"><div class="txt">
               <p>Trzecia nagroda w konkursie architektoniczno-urbanistycznym na nowy zespół budynków dydaktycznych krakowskiej Akademii Muzycznej, planowany w dzielnicy Grzegórzki w bliskości Wisły. Zaproponowaliśmy organiczną bryłę zwróconą ku rzece — formę, która miała wyrażać tożsamość uczelni: artystyczną śmiałość, otwartość na eksperyment i witalność.</p>
               <p>Sąd konkursowy docenił oryginalne wpisanie projektu w kontekst urbanistyczny oraz stworzenie spójnego założenia parkowego, wykraczającego poza granice działki i traktującego istniejący drzewostan jako wartość, którą należy chronić, a nie przeszkodę. Architektura instytucji muzycznej stała się tu pretekstem do myślenia o całym fragmencie miasta i jego relacji z zielenią nadrzeczną.</p>
               <p class="cr">III nagroda, konkurs rekomendowany SARP · Współautorka · <b>WXCA</b></p>
+            </div>
+              <figure class="sketch">
+                <div class="ph">
+                  <span class="ref-tag">P.08</span>
+                  <span class="lbl"><b>Szkic</b><small>w przygotowaniu</small></span>
+                  <!-- SZKIC: wstaw obraz, aby zastąpić placeholder, np. <img src="szkice/p08.jpg" alt="Szkic — Akademia Muzyczna im. K. Pendereckiego"> -->
+                </div>
+                <figcaption><span>Szkic koncepcyjny</span><span>rys. A. Dobek-Lenczewska</span></figcaption>
+              </figure>
             </div></div>
           </details>
 
@@ -292,10 +379,19 @@
               <span class="yr">2025</span>
               <span class="pm" aria-hidden="true"></span>
             </summary>
-            <div class="body"><span></span><div class="txt">
+            <div class="body"><span></span><div class="detail"><div class="txt">
               <p>Koncepcja przebudowy i rozbudowy jednego z najważniejszych krakowskich teatrów, wpisanego w miejską tkankę od ponad stu lat. Projekt łączy ochronę historycznej substancji budynku z wizją nowoczesnej, wielofunkcyjnej instytucji kultury otwartej na mieszkańców i turystów — to próba potraktowania dziedzictwa nie jako zamkniętego rozdziału, lecz jako punktu wyjścia do tworzenia nowych wartości.</p>
               <p>W konkursie praca otrzymała drugą nagrodę; jury podkreśliło szacunek dla historycznej formy i tradycji teatru, atuty wysokiego, trzykondygnacyjnego holu wejściowego i centralnego dziedzińca oraz staranne opracowanie akustyczne. Projekt został następnie laureatem nagrody Wprost UP!Awards 2026 w kategorii „Z szacunkiem do przeszłości".</p>
               <p class="cr">II nagroda · UP!Awards 2026 · Współautorka · <b>WXCA</b></p>
+            </div>
+              <figure class="sketch">
+                <div class="ph">
+                  <span class="ref-tag">P.09</span>
+                  <span class="lbl"><b>Szkic</b><small>w przygotowaniu</small></span>
+                  <!-- SZKIC: wstaw obraz, aby zastąpić placeholder, np. <img src="szkice/p09.jpg" alt="Szkic — Teatr Bagatela im. T. Boya-Żeleńskiego"> -->
+                </div>
+                <figcaption><span>Szkic koncepcyjny</span><span>rys. A. Dobek-Lenczewska</span></figcaption>
+              </figure>
             </div></div>
           </details>
 
@@ -307,10 +403,19 @@
               <span class="yr">2022</span>
               <span class="pm" aria-hidden="true"></span>
             </summary>
-            <div class="body"><span></span><div class="txt">
+            <div class="body"><span></span><div class="detail"><div class="txt">
               <p>Drugie miejsce (ex aequo) w konkursie architektoniczno-urbanistycznym, zorganizowanym przez Uniwersytet Ekonomiczny w Krakowie wspólnie z SARP, na nowy wielofunkcyjny budynek dydaktyczno-konferencyjny z dużą aulą. Działka leży w historycznej lokalizacji, w bezpośrednim sąsiedztwie Starego Miasta oraz pomilitarnej zabudowy koszarowej i niskiej zabudowy Osiedla Oficerskiego.</p>
               <p>Punktem wyjścia było pytanie o skalę: jak wprowadzić duży program uczelni w delikatny, zróżnicowany kontekst, nie przytłaczając go. Odpowiedzią było rozbicie budynku na kilka mniejszych brył o zróżnicowanych gabarytach, dopasowanych do sąsiedztwa — rozwiązanie, które sąd konkursowy docenił jako udaną próbę uzupełnienia układu urbanistycznego i uszanowania charakteru miejsca.</p>
               <p class="cr">II miejsce ex aequo, konkurs SARP · Zespół <b>WXCA</b></p>
+            </div>
+              <figure class="sketch">
+                <div class="ph">
+                  <span class="ref-tag">P.10</span>
+                  <span class="lbl"><b>Szkic</b><small>w przygotowaniu</small></span>
+                  <!-- SZKIC: wstaw obraz, aby zastąpić placeholder, np. <img src="szkice/p10.jpg" alt="Szkic — Uniwersytet Ekonomiczny w Krakowie"> -->
+                </div>
+                <figcaption><span>Szkic koncepcyjny</span><span>rys. A. Dobek-Lenczewska</span></figcaption>
+              </figure>
             </div></div>
           </details>
 
@@ -322,10 +427,19 @@
               <span class="yr">2025</span>
               <span class="pm" aria-hidden="true"></span>
             </summary>
-            <div class="body"><span></span><div class="txt">
+            <div class="body"><span></span><div class="detail"><div class="txt">
               <p>Druga nagroda w konkursie architektoniczno-urbanistycznym na nową siedzibę Archiwum Państwowego w Piotrkowie Trybunalskim. Główną ideą projektu było stworzenie przestrzeni spotkania — z historią, dziedzictwem, wiedzą i ludźmi — w mieście królewskim, sejmowym i trybunalskim, którego zabytkowe śródmieście wyznaczyło ramy dla współczesnego budynku publicznego.</p>
               <p>Architektura opiera się na kontraście dwóch elementów: masywnej, zamkniętej bryły magazynowej oraz otwartej, jasnej przestrzeni holu i czytelni. Widoczny z przestrzeni ogólnodostępnych magazyn przypomina o wartości przechowywanych zbiorów, a czytelnia zaprasza do eksploracji, tworząc warunki do pracy i odkrywania przeszłości. Konkurs premiował przy tym rozwiązania sprzyjające adaptacji do zmian klimatu i gospodarce o obiegu zamkniętym — archiwum chroniące dokumenty przez dekady jest naturalnym poligonem myślenia o trwałości.</p>
               <p class="cr">II nagroda, konkurs architektoniczno-urbanistyczny · Współautorka · <b>WXCA</b></p>
+            </div>
+              <figure class="sketch">
+                <div class="ph">
+                  <span class="ref-tag">P.11</span>
+                  <span class="lbl"><b>Szkic</b><small>w przygotowaniu</small></span>
+                  <!-- SZKIC: wstaw obraz, aby zastąpić placeholder, np. <img src="szkice/p11.jpg" alt="Szkic — Archiwum Państwowe w Piotrkowie Trybunalskim"> -->
+                </div>
+                <figcaption><span>Szkic koncepcyjny</span><span>rys. A. Dobek-Lenczewska</span></figcaption>
+              </figure>
             </div></div>
           </details>
 
@@ -337,10 +451,19 @@
               <span class="yr">koncepcja</span>
               <span class="pm" aria-hidden="true"></span>
             </summary>
-            <div class="body"><span></span><div class="txt">
+            <div class="body"><span></span><div class="detail"><div class="txt">
               <p>Koncepcja konkursowa zespołu budynków dla Sądu Apelacyjnego w Warszawie oraz wojewódzkich instytucji Mazowsza, na działce przy ul. Świętojerskiej, w sąsiedztwie Nowego Miasta i historycznego gmachu sądu przy placu Krasińskich. Zadaniem było zaprojektowanie reprezentacyjnej, a zarazem dostępnej architektury instytucji publicznej w newralgicznym fragmencie śródmieścia.</p>
               <p>Projekt mierzył się z podwójnym wyzwaniem: powagą i czytelnością instytucji wymiaru sprawiedliwości oraz wpisaniem dużego programu w gęstą, historyczną tkankę miasta. To kolejny przykład pracy nad budynkiem użyteczności publicznej, w której forma musi godzić godność urzędu z otwartością na mieszkańców i kontekst urbanistyczny.</p>
               <p class="cr">Koncepcja konkursowa, konkurs SARP · Zespół <b>WXCA</b></p>
+            </div>
+              <figure class="sketch">
+                <div class="ph">
+                  <span class="ref-tag">P.12</span>
+                  <span class="lbl"><b>Szkic</b><small>w przygotowaniu</small></span>
+                  <!-- SZKIC: wstaw obraz, aby zastąpić placeholder, np. <img src="szkice/p12.jpg" alt="Szkic — Sąd Apelacyjny w Warszawie"> -->
+                </div>
+                <figcaption><span>Szkic koncepcyjny</span><span>rys. A. Dobek-Lenczewska</span></figcaption>
+              </figure>
             </div></div>
           </details>
 
@@ -352,10 +475,19 @@
               <span class="yr">finał</span>
               <span class="pm" aria-hidden="true"></span>
             </summary>
-            <div class="body"><span></span><div class="txt">
+            <div class="body"><span></span><div class="detail"><div class="txt">
               <p>Koncepcja konkursowa wspólnej siedziby dwóch awangardowych instytucji w samym sercu Warszawy, wyróżniona udziałem w finale międzynarodowego konkursu. Obie budują swoją tożsamość wokół eksperymentalnego podejścia do sztuki, dialogu i misji włączania sztuki współczesnej w życie społeczne — i to stało się głównym tematem projektu.</p>
               <p>Zaproponowaliśmy architekturę pomyślaną jako wielowarstwowy, tektoniczny krajobraz, który umożliwia zaistnienie sztuki w przestrzeni miasta. Celem było stworzenie ram dla aktywności społecznej: miejsc spotkań, dyskusji i kontemplacji, w których wyrazista i niepowtarzalna forma wspiera to, co dzieje się wewnątrz, zamiast z nim konkurować.</p>
               <p class="cr">Finał konkursu międzynarodowego · Zespół <b>WXCA</b></p>
+            </div>
+              <figure class="sketch">
+                <div class="ph">
+                  <span class="ref-tag">P.13</span>
+                  <span class="lbl"><b>Szkic</b><small>w przygotowaniu</small></span>
+                  <!-- SZKIC: wstaw obraz, aby zastąpić placeholder, np. <img src="szkice/p13.jpg" alt="Szkic — MSN i Teatr TR Warszawa"> -->
+                </div>
+                <figcaption><span>Szkic koncepcyjny</span><span>rys. A. Dobek-Lenczewska</span></figcaption>
+              </figure>
             </div></div>
           </details>
 
